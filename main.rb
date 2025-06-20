@@ -1,7 +1,7 @@
 require_relative './lib/animals.rb'
 require_relative './lib/veterinarian.rb'
 
-# --------  Animals -------- 
+# --------  class Animals -------- 
 
 # Criando alguns animais "em memória"
 animals = Array.new 
@@ -27,7 +27,7 @@ puts Animal.fetch_animals_available(animals)
 puts handle_count_animals(animals)
 puts
 
-# --------  Veterinário -------- 
+# --------  class Veterinário -------- 
 
 # Criando um veterinário com 12 anos de experiência
 vet = Veterinarian.new("Maria", "cardiologia", 12)
