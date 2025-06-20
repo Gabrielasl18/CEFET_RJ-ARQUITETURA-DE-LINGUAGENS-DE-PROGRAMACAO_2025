@@ -4,20 +4,28 @@ require_relative './lib/veterinarian.rb'
 # --------  Animals -------- 
 
 # Criando alguns animais "em memória"
-animals = Array.new # ou []
+animals = Array.new 
 animals << Animal.new("Rex", 5, "cachorro", 6.0)
 animals << Animal.new("Juju", 12, "gato", 5.0)
 animals << Animal.new("Bola", nil, "papagaio", 0.5) 
 animals << Animal.new("Tobby", 3, "cachorro", 14.0)
 
-# acessando uma posição no array atraves do indice
+puts "\n-------- ACESSANDO UMA POSIÇÃO NO ARRAY ATRAVÉS DO ÍNDICE --------"
 puts animals[0]
 puts animals[1]
 puts animals[2]
 puts animals[3]
 
+puts "\n-------- ACESSANDO AS VARIÁVEIS DE INSTÂNCIA ATRAVÉS DOS ATRIBUTOS ACESSÍVEL / GET E SET -------- "
+puts animals[0].name
+puts animals[1].name
+puts animals[2].name
+puts animals[3].name
+
+puts "\n-------- ACESSANDO MÉTODOS DA CLASSE --------\n"
 puts Animal.fetch_animals_available(animals)
 puts handle_count_animals(animals)
+puts
 
 # --------  Veterinário -------- 
 
