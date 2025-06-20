@@ -1,4 +1,3 @@
-# Classe Animal simples (sem ActiveRecord)
 class Animal
   attr_accessor :name, :age, :species, :weight
 
@@ -38,17 +37,20 @@ end
 
 def calculate_consult(animals, name)
   animals.each do |animal|
-    next if animal.age.nil? || animal.weight.nil?
-    if animal.name == name
-      if animal.age >= 4 && animal.age <= 9 && animal.weight > 4.0
-        value = CONSULTATION_VALUE * 4
-      elsif (animal.age >= 10 && animal.weight > 4.0) || (animal.weight >= 12.0)
-        value = CONSULTATION_VALUE * 8
-      else
-        value = CONSULTATION_VALUE
-      end
-      return { message: "O valor da consulta para #{name} é R$#{value}" }
+    next if animal.age.nil? || animal.weight.nil? # se um dos 2 forem nil vai pular
+    next unless animal.name == name # somente se for falso vai pular
+
+    if animal.age >= 4 && animal.age <= 9 && animal.weight > 4.0
+      value = CONSULTATION_VALUE * 4
+    elsif (animal.age >= 10 && animal.weight > 4.0) || (animal.weight >= 12.0)
+      value = CONSULTATION_VALUE * 8
+    else
+      value = CONSULTATION_VALUE
     end
+
+    return { message: "O valor da consulta para #{name} é R$#{value}" }
   end
+
+  # Se nenhum animal com o nome for encontrado
   { message: "Animal #{name} não encontrado." }
 end

@@ -28,7 +28,7 @@ class Veterinarian
   end
 
   def consult_animal(animals, animal_name)
-    result = calculate_consult(animals, animal_name) # agora retorna um Hash, não string JSON
+    result = calculate_consult(animals, animal_name) 
 
     if result[:message].include?("não encontrado")
       "#{@name} não conseguiu encontrar o animal chamado #{animal_name}."
